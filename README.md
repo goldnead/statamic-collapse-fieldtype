@@ -17,7 +17,7 @@ That's it. No vendors-assets needing attention or config files waiting to be con
 Behind the scenes this fieldtype kind of works like a `grid` or `replicator` fieldtype. Just without the repetition. Even conditions work!
 Just use it in your fieldsets or blueprints like this:
 
-```
+```yaml
 title: 'Content Theme'
 fields:
   -
