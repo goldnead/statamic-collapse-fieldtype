@@ -1,14 +1,23 @@
 {
     "name": "goldnead/statamic-collapse-fieldtype",
+    "description": "A Collapse-Fieldtype for Statamic to beautifully hide and show your fields.",
+    "type": "statamic-addon",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Goldnead\\CollapseFieldtype\\": "src"
         }
     },
+    "authors": [
+        {
+            "name": "goldnead",
+            "email": "info@adriangoldner.com"
+        }
+    ],
     "extra": {
         "statamic": {
-            "name": "Statamic Collapse Fieldtype",
-            "description": "Statamic Collapse Fieldtype addon"
+            "name": "Statamic Collapse-Fieldtype",
+            "description": "A Collapse-Fieldtype for Statamic to beautifully hide and show your fields."
         },
         "laravel": {
             "providers": [
@@ -17,6 +26,7 @@
         }
     },
     "require": {
-        "statamic/cms": "^3.2"
+        "php": "^7.3|^8.0",
+        "statamic/cms": "^3.0.23 | ^3.1 | ^3.2"
     }
 }

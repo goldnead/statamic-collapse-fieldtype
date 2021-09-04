@@ -6,9 +6,10 @@
 .collapse-group {
   border-radius: 3px;
   border: 1px solid #e0e0e0;
-  @media (prefers-color-scheme: dark) {
+  
+  /*@media (prefers-color-scheme: dark) {
       border-color: #374151;
-  }
+  }*/
 
   &__header {
     position: relative;
@@ -20,9 +21,9 @@
     line-height: 1.5;
     cursor: pointer;
 
-    @media (prefers-color-scheme: dark) {
+    /*@media (prefers-color-scheme: dark) {
       background-color: #374151;
-    }
+    }*/
 
     &::before {
       position: absolute;
@@ -35,17 +36,17 @@
       content: "";
       transform: rotate(-45deg);
 
-      @media (prefers-color-scheme: dark) {
+      /*@media (prefers-color-scheme: dark) {
         border-color: #737f8c;
-      }
+      }*/
     }
 
     &:hover {
       background: #374151;
 
-      @media (prefers-color-scheme: dark) {
+      /*@media (prefers-color-scheme: dark) {
         background-color: #404c5e;
-      }
+      }*/
     }
   }
 
@@ -56,9 +57,9 @@
     transition: height 0.25s;
     height: auto;
 
-    @media (prefers-color-scheme: dark) {
+    /*@media (prefers-color-scheme: dark) {
       background-color: #283240;
-    }
+    }*/
   }
 
   &__instructions {

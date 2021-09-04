@@ -1,6 +1,8 @@
 {
   "name": "statamic-collapse-fieldset",
   "license": "MIT",
+  "description": "[![Latest Version](https://img.shields.io/github/v/release/goldnead/statamic-collapse-fieldtype?style=flat-square)](https://github.com/goldnead/statamic-collapse-fieldtype/releases)",
+  "main": "index.js",
   "scripts": {
     "development": "mix",
     "watch": "mix watch",
