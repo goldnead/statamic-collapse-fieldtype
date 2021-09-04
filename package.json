@@ -1,0 +1,24 @@
+{
+  "name": "statamic-collapse-fieldset",
+  "license": "MIT",
+  "scripts": {
+    "development": "mix",
+    "watch": "mix watch",
+    "production": "mix --production"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.10",
+    "postcss": "^8.2.4",
+    "sass": "^1.39.0",
+    "sass-loader": "^12.1.0",
+    "uniqid": "^5.4.0",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "devDependencies": {
+    "resolve-url-loader": "^4.0.0"
+  }
+}

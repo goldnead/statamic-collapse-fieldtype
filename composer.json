@@ -1,0 +1,22 @@
+{
+    "name": "goldnead/statamic-collapse-fieldtype",
+    "autoload": {
+        "psr-4": {
+            "Goldnead\\CollapseFieldtype\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Statamic Collapse Fieldtype",
+            "description": "Statamic Collapse Fieldtype addon"
+        },
+        "laravel": {
+            "providers": [
+                "Goldnead\\CollapseFieldtype\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "statamic/cms": "^3.2"
+    }
+}
