@@ -10,7 +10,6 @@ composer require goldnead/statamic-collapse-fieldtype
 ```
 
 That's it. No vendors-assets needing attention or config files waiting to be configured. Just a plain ol' Fieldtype, nuthin' more.
-(It even works with dark-mode)
 
 ## Usage
 
@@ -82,7 +81,7 @@ You can also just use it in the blueprint editor.
 Like in the `grid` fieldset all values are scoped within that field. So to acces the variable `section_width` from the example above we need to write something like this in our templates:
 
 ```
-<section width="{{ collapse.section_width }}>...</section>
+<section width="{{ collapse:section_width }}>...</section>
 ```
 
 
