@@ -49,7 +49,7 @@ export default {
   },
 
   methods: {
-    updated(handle, value, wtf) {
+    updated(handle, value) {
       let group = JSON.parse(JSON.stringify(this.values));
       group[handle] = value;
       this.update(group);
