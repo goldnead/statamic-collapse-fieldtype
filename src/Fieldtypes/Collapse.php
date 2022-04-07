@@ -40,8 +40,6 @@ class Collapse extends Fieldtype
     {
         return $data;
         return collect($data)->map(function ($group, $i) {
-            dd($group);
-            dd($this->fields()->addValues($group)->preProcess()->values()->all());
             return $this->fields()->addValues($group)->preProcess()->values()->all();
         })->all();
     }
