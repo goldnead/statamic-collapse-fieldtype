@@ -8,19 +8,15 @@
     "watch": "mix watch",
     "production": "mix --production"
   },
-  "dependencies": {
-    "babel": "^6.23.0",
+  "devDependencies": {
     "cross-env": "^7.0.3",
-    "laravel-mix": "^6.0.10",
-    "postcss": "^8.2.4",
-    "sass": "^1.39.0",
-    "sass-loader": "^12.1.0",
+    "laravel-mix": "^6.0",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
     "uniqid": "^5.4.0",
     "vue": "^2.6.12",
     "vue-loader": "^15.9.6",
-    "vue-template-compiler": "^2.6.12"
-  },
-  "devDependencies": {
+    "vue-template-compiler": "^2.6.12",
     "resolve-url-loader": "^4.0.0"
   }
 }

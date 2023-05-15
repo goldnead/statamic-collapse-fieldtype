@@ -44,8 +44,12 @@ export default {
 
   data() {
     return {
-      isOpen: false,
+      isOpen: false
     };
+  },
+
+  mounted() {
+    console.log("test");
   },
 
   methods: {
@@ -69,10 +73,9 @@ export default {
       } else {
         this.open();
       }
-    },
+    }
   },
   computed: {
-
     state() {
       return this.$store.state.publish[this.storeName];
     },
@@ -88,7 +91,7 @@ export default {
 
     fields() {
       return this.config.fields;
-    },
-  },
+    }
+  }
 };
 </script>

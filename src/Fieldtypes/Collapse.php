@@ -7,8 +7,10 @@ use Statamic\Fields\Fieldtype;
 
 class Collapse extends Fieldtype
 {
-    public $icon = "section";
+    public $icon = 'section';
+
     protected $defaultValue = [];
+
     /**
      * The blank/default value.
      *
@@ -33,12 +35,13 @@ class Collapse extends Fieldtype
     /**
      * Pre-process the data before it gets sent to the publish page.
      *
-     * @param mixed $data
+     * @param  mixed  $data
      * @return array|mixed
      */
     public function preProcess($data)
     {
         return $data;
+
         return collect($data)->map(function ($group, $i) {
             return $this->fields()->addValues($group)->preProcess()->values()->all();
         })->all();
@@ -52,17 +55,18 @@ class Collapse extends Fieldtype
     public function preload()
     {
         $defaults = [
-            "defaults" => $this->fields()->all()->map(function ($field) {
+            'defaults' => $this->fields()->all()->map(function ($field) {
                 return $field->fieldtype()->preProcess($field->defaultValue());
-            })->all()
+            })->all(),
         ];
+
         return $defaults;
     }
 
     /**
      * Process the data before it gets saved.
      *
-     * @param mixed $data
+     * @param  mixed  $data
      * @return array|mixed
      */
     public function process($data)
