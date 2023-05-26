@@ -11,12 +11,16 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "laravel-mix": "^6.0",
+    "resolve-url-loader": "^4.0.0",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
     "uniqid": "^5.4.0",
     "vue": "^2.6.12",
     "vue-loader": "^15.9.6",
-    "vue-template-compiler": "^2.6.12",
-    "resolve-url-loader": "^4.0.0"
+    "vue-template-compiler": "^2.6.12"
+  },
+  "dependencies": {
+    "marked": "^5.0.2",
+    "underscore": "^1.13.6"
   }
 }

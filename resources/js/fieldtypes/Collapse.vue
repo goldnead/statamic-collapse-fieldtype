@@ -11,21 +11,20 @@
 
     <div class="collapse-group__body" ref="collapse_body">
       <publish-fields-container>
-        <publish-field
+        <set-field
           v-for="field in fields"
           v-show="showField(field)"
           :key="field.handle"
-          :config="field"
+          :field="field"
+          :meta="meta.defaults[field.handle]"
           :value="values[field.handle]"
-          :meta="meta[field.handle]"
-          :errors="errors[field.handle]"
-          :read-only="readOnly"
-          :can-toggle-label="canToggleLabels"
-          :name-prefix="namePrefix"
-          @input="updated(field.handle, $event)"
-          @meta-updated="$emit('meta-updated', field.handle, $event)"
-          @synced="$emit('synced', field.handle)"
-          @desynced="$emit('desynced', field.handle)"
+          :parent-name="name"
+          :set-index="0"
+          :errors="errors(field.handle)"
+          :error-key="errorKey(field.handle)"
+          :read-only="isReadOnly"
+          @updated="updated(field.handle, $event)"
+          @meta-updated="metaUpdated(field.handle, $event)"
           @focus="$emit('focus')"
           @blur="$emit('blur')"
         />
@@ -36,20 +35,23 @@
 
 <script>
 import ValidatesFieldConditions from "../../../vendor/statamic/cms/resources/js/components/field-conditions/ValidatorMixin.js";
+import SetField from "../../../vendor/statamic/cms/resources/js/components/fieldtypes/replicator/Field.vue";
 
 export default {
   mixins: [Fieldtype, ValidatesFieldConditions],
 
   inject: ["storeName"],
 
+  components: { SetField },
+
+  mounted() {
+    console.log(this);
+  },
+
   data() {
     return {
       isOpen: false
     };
-  },
-
-  mounted() {
-    console.log("test");
   },
 
   methods: {
@@ -59,12 +61,28 @@ export default {
       this.update(group);
     },
 
+    metaUpdated(handle, value) {
+      let meta = JSON.parse(JSON.stringify(this.meta));
+      meta.defaults[handle] = value;
+      this.updateMeta(meta);
+    },
+
     open() {
       this.isOpen = true;
     },
 
     close() {
       this.isOpen = false;
+    },
+
+    errorKey(handle) {
+      return `${this.handle}.${handle}`;
+    },
+
+    errors(handle) {
+      const state = this.$store.state.publish[this.storeName];
+      if (!state) return [];
+      return state.errors[this.errorKey(handle)] || [];
     },
 
     toggle() {
@@ -85,7 +103,7 @@ export default {
       return { ...this.meta.defaults, ...this.value };
     },
 
-    errors() {
+    oldErrors() {
       return this.state.errors;
     },
 
