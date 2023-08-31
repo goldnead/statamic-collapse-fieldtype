@@ -75,6 +75,6 @@ class Collapse extends Fieldtype
           return $field->fieldtype()->process($field->defaultValue());
         });
 
-        return collect($defaults)->merge($data)->ray()->all();
+        return collect($defaults)->merge($data)->all();
     }
 }
